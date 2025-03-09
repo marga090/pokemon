@@ -1,0 +1,21 @@
+<main class="container">
+    <h1>Lista de Pokemons</h1>
+
+    <div class="card-container">
+
+        <!-- Cuadricula -->
+        <div *ngFor="let pokemon of pokemons"  class="card">
+            <img src="{{getImageByPokemon(pokemon)}}" alt="{{pokemon.name}}">
+            <div class="card-content">
+                <h3>{{capitalizeFirstLetter(pokemon.name)}}</h3>
+                <a href="{{getUrlDetailPokemon(pokemon)}}">Ver detalle</a>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<div class="pagination">
+    <button (click)="prev()" [disabled] = "prevPage == null">Anterior</button>
+    <button (click)="next()" [disabled] = "nextPage == null">Siguiente</button>
+  </div>

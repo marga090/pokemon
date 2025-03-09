@@ -1,0 +1,107 @@
+/* Estilos base del footer */
+footer {
+  background-color: #c4754c;
+  color: white;
+  padding: 40px 20px;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.footer-container > div {
+  flex: 1 1 48%; /* Dos columnas */
+  min-width: 250px;
+}
+
+/* Estilos para el enlace de GitHub */
+.github-section {
+  text-align: center;
+  margin: 30px auto;
+  max-width: 1200px;
+}
+
+.github-button {
+  background: #c4754c;
+  border: 2px solid #333;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.github-button:hover {
+  background: #333;
+  border-color: #444;
+  transform: translateY(-2px);
+}
+
+.github-button i {
+  font-size: 1.2em;
+}
+
+/* Estilos para el feedback */
+.feedback-section {
+  background: #c4754c;
+  border-radius: 8px;
+  padding: 15px;
+  margin-top: 10px;
+}
+
+.feedback-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.feedback-section li {
+  margin: 10px 0;
+  padding-left: 25px;
+  position: relative;
+}
+
+.feedback-section li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+}
+
+/* Copyright */
+.copyright {
+  border-top: 1px solid #98aeb2;
+  padding-top: 15px;
+  margin-top: 30px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-container > div {
+    flex: 1 1 100%;
+  }
+
+  .github-button {
+    width: 100%;
+    max-width: 300px;
+  }
+}

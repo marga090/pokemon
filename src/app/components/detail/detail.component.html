@@ -1,0 +1,97 @@
+<div *ngIf="pokemon && specie" class="container">
+    <h1>{{specie.name}}</h1>
+
+    <div class="navigation-buttons">
+      <a *ngIf="id > 1" href="{{ goPrev() }}" class="button previous-button">Anterior</a>
+      <a *ngIf="id < 1025" href="{{ goNext() }}" class="button next-button">Siguiente</a>
+    </div>
+    
+    <div class="detail-image image-container ">
+      <img src="{{getImageByPokemon(pokemon)}}" alt="Frontal">
+      <img src="{{getImageByPokemon(pokemon, true)}}" alt="Shiny">
+    </div>
+
+    <div class="detail-image image-container">
+      <img *ngFor="let type of types" src="{{type.image}}" alt="{{type.name}}">
+    </div>
+
+    <h2>Datos de la especie</h2>
+
+    <p>{{specie.desc}}</p>
+
+    <div class="detail-item">
+        <strong>Altura: </strong>{{pokemon.height}} - 
+        <strong>Peso: </strong>{{pokemon.weight}} 
+    </div>
+
+    <h2>Marcas</h2>
+
+    <div class="checkbox-container">
+      <label class="custom-checkbox">
+        <input type="checkbox" [checked]="specie.isLegend" />
+        Es Legendario 
+        <span class="checkmark"></span>
+      </label>
+      <label class="custom-checkbox">
+        <input type="checkbox" [checked]="specie.isSingular" />
+        Es Singular
+        <span class="checkmark"></span>
+      </label>
+    </div>
+
+    <h2>Sonidos</h2>
+    <div class="audio-player">
+      <audio #audioPlayer controls>
+        <!-- Agregamos diferentes formatos para máxima compatibilidad -->
+        <source src="{{cries}}" type="audio/ogg" />
+        <p>Your browser does not support the audio element.</p>
+      </audio>
+      <button (click)="playAudio(audioPlayer)">Play</button>
+      <button (click)="pauseAudio(audioPlayer)">Pause</button>
+      <button (click)="stopAudio(audioPlayer)">Stop</button>
+    </div>
+
+    <div class="table-container">
+      <h2>Habilidades</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Habilidad</th>
+            <th>Efecto</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let ability of abilities">
+            <td>{{ability.name}}</td>
+            <td>{{ability.desc}}</td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+
+    <div class="table-container">
+        <h2>Movimientos que puede aprender</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Movimiento</th>
+              <th>Precsión</th>
+              <th>Poder</th>
+              <th>Descripción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let move of moves">
+              <td>{{move.id}}</td>
+              <td>{{move.name}}</td>
+              <td>{{move.accuracy}}</td>
+              <td>{{move.power}}</td>
+              <td>{{move.desc}}</td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+
+    <a href="#" class="back-button">Volver</a>
+  </div>
