@@ -14,7 +14,6 @@ export class PokemonService {
     this._httpClient = httpClient;
   }
 
-  //Para paginación le doy el valor por defecto _urlBase al parametro
   public getList(urlBase: string = this._urlBase): Observable<any>{
     return this._httpClient.get(urlBase);
   }
@@ -23,5 +22,5 @@ export class PokemonService {
     return this._httpClient.get(this._urlBase + "/" + id);
   }
 
-  
+
 }

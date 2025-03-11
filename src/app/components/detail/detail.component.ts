@@ -84,7 +84,7 @@ export class DetailComponent implements OnInit{
               this.abilities.push(ability);
             }
           );
-          
+
         }
       );
 
@@ -99,7 +99,7 @@ export class DetailComponent implements OnInit{
               this.types.push(type);
             }
           )
-          
+
         }
       );
 
@@ -171,18 +171,5 @@ export class DetailComponent implements OnInit{
   capitalizeFirstLetter(text: string ): string {
       return text.charAt(0).toUpperCase() + text.slice(1);
   }
-
-  playAudio(audio: HTMLAudioElement): void {
-    audio.play();
-  }
-
-  pauseAudio(audio: HTMLAudioElement): void {
-    audio.pause();
-  }
-
-  stopAudio(audio: HTMLAudioElement): void {
-    audio.pause();
-    audio.currentTime = 0; // Reset playback position
-  } 
 
 }

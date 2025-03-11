@@ -1,7 +1,7 @@
 .container {
   max-width: 800px;
   margin: 50px auto;
-  background: white;
+  background: #dfcd83;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -9,7 +9,7 @@
 
 h1 {
   font-size: 24px;
-  color: #333;
+  color: #121212;
   margin-bottom: 10px;
 }
 
@@ -25,10 +25,6 @@ p {
 .detail-image {
   text-align: center;
   margin-bottom: 20px;
-}
-
-.image-container {
-  display: flex; /* Coloca los elementos en línea horizontal */
 }
 
 .detail-image img {
@@ -57,38 +53,22 @@ p {
 }
 
 .previous-button {
-  background-color: #4CAF50;
-}
-
-.previous-button:hover {
-  background-color: #45a049;
+  background-color: #98aeb2;
 }
 
 .next-button {
   background-color: #007BFF;
 }
 
-.next-button:hover {
-  background-color: #0056b3;
-}
-
 .back-button {
   display: inline-block;
   margin-top: 20px;
   padding: 10px 20px;
-  background-color: #4caf50;
+  background-color: #98aeb2;
   color: white;
   text-decoration: none;
   border-radius: 5px;
   transition: background-color 0.3s;
-}
-
-.back-button:hover {
-  background-color: #45a049;
-}
-
-.back-button:active {
-  background-color: #397d3b;
 }
 
 .table-container {
@@ -107,14 +87,12 @@ p {
   border-bottom: 1px solid #ddd;
 }
 
-/* Contenedor principal del checkbox */
 .checkbox-container {
   margin: 20px;
   font-size: 1.2rem;
   text-align: center;
 }
 
-/* Personalización del checkbox */
 .custom-checkbox {
   display: inline-flex;
   align-items: center;
@@ -128,14 +106,12 @@ p {
   font-weight: bold;
 }
 
-/* Ocultamos el checkbox original */
 .custom-checkbox input[type="checkbox"] {
   position: absolute;
   opacity: 0;
   cursor: pointer;
 }
 
-/* Estilo para la "checkmark" */
 .custom-checkbox .checkmark {
   position: absolute;
   top: 0;
@@ -149,30 +125,20 @@ p {
   margin-left: 5px;
 }
 
-/* Efecto de hover en el checkmark */
 .custom-checkbox:hover input ~ .checkmark {
   background-color: #f0f0f0;
 }
 
-/* Cambiar el fondo cuando el checkbox está marcado */
-.custom-checkbox input:checked ~ .checkmark {
-  background-color: #007bff;
-  border-color: #007bff;
-}
-
-/* Icono de "check" dentro del checkmark */
 .custom-checkbox .checkmark:after {
   content: '';
   position: absolute;
   display: none;
 }
 
-/* Mostrar el "check" cuando está marcado */
 .custom-checkbox input:checked ~ .checkmark:after {
   display: block;
 }
 
-/* Diseño del icono "check" */
 .custom-checkbox .checkmark:after {
   left: 6px;
   top: 2px;
@@ -183,12 +149,6 @@ p {
   transform: rotate(45deg);
 }
 
-.audio-player {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
 button {
   padding: 5px 10px;
   border: none;
@@ -196,8 +156,4 @@ button {
   color: white;
   border-radius: 5px;
   cursor: pointer;
-}
-
-button:hover {
-  background-color: #0056b3;
 }

@@ -5,7 +5,7 @@
       <a *ngIf="id > 1" href="{{ goPrev() }}" class="button previous-button">Anterior</a>
       <a *ngIf="id < 1025" href="{{ goNext() }}" class="button next-button">Siguiente</a>
     </div>
-    
+
     <div class="detail-image image-container ">
       <img src="{{getImageByPokemon(pokemon)}}" alt="Frontal">
       <img src="{{getImageByPokemon(pokemon, true)}}" alt="Shiny">
@@ -20,8 +20,8 @@
     <p>{{specie.desc}}</p>
 
     <div class="detail-item">
-        <strong>Altura: </strong>{{pokemon.height}} - 
-        <strong>Peso: </strong>{{pokemon.weight}} 
+        <strong>Altura: </strong>{{pokemon.height}} -
+        <strong>Peso: </strong>{{pokemon.weight}}
     </div>
 
     <h2>Marcas</h2>
@@ -29,7 +29,7 @@
     <div class="checkbox-container">
       <label class="custom-checkbox">
         <input type="checkbox" [checked]="specie.isLegend" />
-        Es Legendario 
+        Es Legendario
         <span class="checkmark"></span>
       </label>
       <label class="custom-checkbox">
@@ -37,18 +37,6 @@
         Es Singular
         <span class="checkmark"></span>
       </label>
-    </div>
-
-    <h2>Sonidos</h2>
-    <div class="audio-player">
-      <audio #audioPlayer controls>
-        <!-- Agregamos diferentes formatos para máxima compatibilidad -->
-        <source src="{{cries}}" type="audio/ogg" />
-        <p>Your browser does not support the audio element.</p>
-      </audio>
-      <button (click)="playAudio(audioPlayer)">Play</button>
-      <button (click)="pauseAudio(audioPlayer)">Pause</button>
-      <button (click)="stopAudio(audioPlayer)">Stop</button>
     </div>
 
     <div class="table-container">
@@ -93,5 +81,5 @@
         </table>
     </div>
 
-    <a href="#" class="back-button">Volver</a>
+    <a href="#" class="back-button">VOLVER LISTA POKEMONS</a>
   </div>
