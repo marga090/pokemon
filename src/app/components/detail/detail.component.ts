@@ -59,7 +59,7 @@ export class DetailComponent implements OnInit{
           }
       );
 
-      //Obtener datos de la especie
+      //Obtener datos de la especie, formato Json a formato Pokemon
       if(this.pokemon?.species != null){
         this._specieService.getDetail(this.pokemon.species.url).subscribe(
           (data:any) => {
@@ -103,7 +103,6 @@ export class DetailComponent implements OnInit{
         }
       );
 
-      //Obtener los movimientos
       this.pokemon?.moves.forEach(
         (data:any) => {
           this._moveService.getDetail(data.move.url).subscribe(
