@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PokemonService } from '../../services/pokemon.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
-import { PokemonDetail } from '../../models/pokemon-detail';
+import { PokemonDetail } from '../../models/detail';
 import { Type } from '../../models/type';
 import { TypeService } from '../../services/type.service';
 import { Ability } from '../../models/ability';
