@@ -3,8 +3,6 @@ import { PokemonService } from '../../services/pokemon.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { PokemonDetail } from '../../models/pokemon-detail';
-import { Move } from '../../models/move';
-import { MoveService } from '../../services/move.service';
 import { Type } from '../../models/type';
 import { TypeService } from '../../services/type.service';
 import { Ability } from '../../models/ability';
@@ -22,24 +20,21 @@ export class DetailComponent implements OnInit{
 
   private _location: Location;
   private _pokemonService: PokemonService;
-  private _moveService: MoveService;
   private _typeService: TypeService;
   private _abilityService: AbilityService;
   private _specieService: SpeciesService;
   private _route: ActivatedRoute;
   public pokemon: PokemonDetail | null = null;
-  public moves: Move[] = [];
   public types: Type[] = [];
   public abilities: Ability[] = [];
   public specie: Specie | null = null;
   public id: number = 0;
   public cries: string = "";
 
-  constructor(location: Location, pokemonService: PokemonService, route: ActivatedRoute, moveService: MoveService, typeService: TypeService, abilityService: AbilityService, specieService: SpeciesService){
+  constructor(location: Location, pokemonService: PokemonService, route: ActivatedRoute, typeService: TypeService, abilityService: AbilityService, specieService: SpeciesService){
     this._pokemonService = pokemonService;
     this._route = route;
     this._location = location;
-    this._moveService = moveService;
     this._typeService = typeService;
     this._abilityService = abilityService;
     this._specieService = specieService;
@@ -55,7 +50,6 @@ export class DetailComponent implements OnInit{
       this._pokemonService.getDetail(this.id).subscribe(
         (data:any) => {
           this.pokemon = data;
-          this.cries = data.cries.legacy;
           }
       );
 
@@ -66,8 +60,6 @@ export class DetailComponent implements OnInit{
             const specie: Specie = data;
             specie.name = this.getNameByLanguage(data.names, 'es');
             specie.desc = this.getDescByLanguage(data.flavor_text_entries, 'es');
-            specie.isLegend = data.is_legendary;
-            specie.isSingular = data.is_mythical;
             this.specie = specie;
           }
         );
@@ -102,21 +94,7 @@ export class DetailComponent implements OnInit{
 
         }
       );
-
-      this.pokemon?.moves.forEach(
-        (data:any) => {
-          this._moveService.getDetail(data.move.url).subscribe(
-            (data:any) => {
-              const move: Move = data;
-              move.name = this.getNameByLanguage(data.names, 'es');
-              move.desc = this.getDescByLanguage(data.flavor_text_entries, 'es');
-              this.moves.push(move);
-            }
-          )
-        }
-      );
     }
-
   }
 
   getTypeImageById(id: number): string{

@@ -5,7 +5,7 @@ export class Specie {
     private _desc: string;
     private _isLegend: boolean;
     private _isSingular: boolean;
-    
+
 
     constructor(id: number, name: string, url: string, desc: string, isLegend: boolean, isSingular: boolean){
         this._id = id;
@@ -24,8 +24,5 @@ export class Specie {
     public set url(value: string) { this._url = value; }
     public get desc(): string { return this._desc; }
     public set desc(value: string) { this._desc = value; }
-    public get isLegend(): boolean { return this._isLegend; }
-    public set isLegend(value: boolean) { this._isLegend = value; }
-    public get isSingular(): boolean { return this._isSingular; }
-    public set isSingular(value: boolean) { this._isSingular = value; }
+
 }
