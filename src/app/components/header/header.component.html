@@ -14,7 +14,7 @@
 
 <!-- Buscador de Pokémon -->
 <div class="search-container">
-  <input type="text" placeholder="Buscar Pokemon" (input)="searchPokemon()">
+  <input type="text" placeholder="Buscar Pokémon" [(ngModel)]="searchTerm" (input)="searchPokemon()">
 </div>
 
 </header>
