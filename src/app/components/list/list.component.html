@@ -1,14 +1,9 @@
 <main class="container">
     <h1>Lista de Pokemons</h1>
 
-    <!-- Buscador -->
-<div class="search-container">
-  <input type="text" placeholder="Buscar Pokémon" [(ngModel)]="searchTerm" (input)="searchPokemon()">
-</div>
-
     <div class="card-container">
 
-        <!-- Cuadricula -->
+        <!-- Cuadricula , uso de ngFor(directiva que itera sobre la lista de pokemons y lo manda a la tarjeta)-->
         <div *ngFor="let pokemon of pokemons"  class="card">
             <img src="{{getImageByPokemon(pokemon)}}" alt="{{pokemon.name}}">
             <div class="card-content">

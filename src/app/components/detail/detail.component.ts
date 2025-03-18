@@ -103,7 +103,7 @@ export class DetailComponent implements OnInit{
     return urlImageType + id + ".png";
   }
 
-  //Traduccion del nombre del movimiento al español
+  //Traduccion al español
   getNameByLanguage(names: string[], language: string): string{
     let result = "";
     names.forEach((name:any)=>{
@@ -114,7 +114,7 @@ export class DetailComponent implements OnInit{
     return result;
   }
 
-  //Traduccion del efecto del movimiento al español
+  //Traduccion al español
   getDescByLanguage(names: string[], language: string): string{
     let result = "";
     names.forEach((flavor_text:any)=>{
