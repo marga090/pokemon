@@ -1,6 +1,11 @@
 <main class="container">
     <h1>Lista de Pokemons</h1>
 
+    <!-- Buscador -->
+<div class="search-container">
+  <input type="text" placeholder="Buscar Pokémon" [(ngModel)]="searchTerm" (input)="searchPokemon()">
+</div>
+
     <div class="card-container">
 
         <!-- Cuadricula -->

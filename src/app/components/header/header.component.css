@@ -53,21 +53,6 @@ header {
   letter-spacing: 1px;
 }
 
-.search-container {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  z-index: 3;
-}
-
-.search-container input {
-  padding: 10px;
-  width: 200px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-}
-
 @media (max-width: 480px) {
   header {
     min-height: 40vh;
