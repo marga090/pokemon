@@ -29,7 +29,6 @@ export class DetailComponent implements OnInit{
   public abilities: Ability[] = [];
   public specie: Specie | null = null;
   public id: number = 0;
-  public cries: string = "";
 
   constructor(location: Location, pokemonService: PokemonService, route: ActivatedRoute, typeService: TypeService, abilityService: AbilityService, specieService: SpeciesService){
     this._pokemonService = pokemonService;
@@ -40,6 +39,7 @@ export class DetailComponent implements OnInit{
     this._specieService = specieService;
   }
 
+  //Recarga lista pokemon, demonio
   public ngOnInit(): void {
     let idParam = this._route.snapshot.paramMap.get("id");
     if(idParam){
@@ -97,6 +97,7 @@ export class DetailComponent implements OnInit{
     }
   }
 
+  //Obtener imagen por id
   getTypeImageById(id: number): string{
     const urlImageType = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-iii/xd/";
 
@@ -125,18 +126,22 @@ export class DetailComponent implements OnInit{
     return result;
   }
 
+  //Hacia atrás
   goBack(): void {
     this._location.back();
   }
 
+  //Pokemon anterior
   goPrev(): string {
     return "/detail/" + (this.id - 1);
   }
 
+  //Pokemon siguiente
   goNext(): string {
     return "/detail/" + (this.id + 1);
   }
 
+  //Imagen del pokemon
   getImageByPokemon(pokemonDetail: PokemonDetail, shiny: boolean = false){
     let urlImage: string = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/";
     if(shiny){
@@ -145,6 +150,7 @@ export class DetailComponent implements OnInit{
     return urlImage + pokemonDetail?.id + ".png";
   }
 
+  //Primera letra en mayusculas
   capitalizeFirstLetter(text: string ): string {
       return text.charAt(0).toUpperCase() + text.slice(1);
   }

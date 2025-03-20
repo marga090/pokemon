@@ -17,10 +17,12 @@ export class ListComponent implements OnInit {
 
   constructor(private pokemonService: PokemonService) {}
 
+  //Recarga lista pokemon, demonio
   ngOnInit(): void {
     this.getPokemonList();
   }
 
+  //Obtener lista de pokemones
   private getPokemonList(url: string = ""): void {
     this.pokemonService.getList(url || undefined).subscribe(
       (data: any) => {
@@ -36,6 +38,7 @@ export class ListComponent implements OnInit {
     );
   }
 
+  //Paginación
   public next(): void {
     if (this.nextPage) {
       this.getPokemonList(this.nextPage);
@@ -48,6 +51,7 @@ export class ListComponent implements OnInit {
     }
   }
 
+  //URL de la imagen
   public getImageByPokemon(pokemon: Pokemon): string {
     const urlImage = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/";
     const urlSplitted = pokemon.url.split("/");
@@ -55,15 +59,18 @@ export class ListComponent implements OnInit {
     return `${urlImage}${id}.png`;
   }
 
+  //URL de los detalles
   public getUrlDetailPokemon(pokemon: Pokemon): string {
     const urlSplitted = pokemon.url.split("/");
     return `/detail/${urlSplitted[urlSplitted.length - 2]}`;
   }
 
+  //Primera letra en mayúscula
   public capitalizeFirstLetter(text: string): string {
     return text.charAt(0).toUpperCase() + text.slice(1);
   }
 
+  //Buscar el pokemon por nombre
   public searchPokemon(): void {
     if (!this.pokemons) return;
     this.filteredPokemons = this.pokemons.filter(pokemon =>
