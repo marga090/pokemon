@@ -1,8 +1,8 @@
 <div *ngIf="pokemon && specie" class="container">
 
   <div class="navigation-buttons">
-      <a *ngIf="id > 1" (click)="goPrev()" class="button previous-button">Anterior</a>
-      <a *ngIf="id < 1025" (click)="goNext()" class="button next-button">Siguiente</a>
+    <a *ngIf="id > 1" href="{{ goPrev() }}" class="button previous-button">Anterior</a>
+    <a *ngIf="id < 1025" href="{{ goNext() }}" class="button next-button">Siguiente</a>
   </div>
 
   <h1>{{ capitalizeFirstLetter(specie.name) }}</h1>
